@@ -1,0 +1,36 @@
+{
+  "name": "banquet1",
+  "version": "1.0.0",
+  "description": "an app to collect ideas for banquet",
+  "main": "server.js",
+  "scripts": {
+    "server": "node server/server.js",
+    "client": "node server/scripts/start-client.js",
+    "build": "node server/scripts/build.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "concurrently \"nodemon server/server.js\" \"npm run client\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Momojunzi/banquet1.git"
+  },
+  "author": "Mark Holthaus",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Momojunzi/banquet1/issues"
+  },
+  "homepage": "https://github.com/Momojunzi/banquet1#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "cookie-parser": "^1.4.3",
+    "debug": "^3.1.0",
+    "express": "^4.16.2",
+    "mongoose": "^5.0.3",
+    "morgan": "^1.9.0",
+    "serve-favicon": "^2.4.5",
+    "socket.io": "^2.0.4"
+  },
+  "devDependencies": {
+    "concurrently": "^3.5.1"
+  }
+}
