@@ -1,11 +1,13 @@
 import React, {Component} from 'react';
 import axios from 'axios';
+import Message from "./message.js";
 
 class Questions extends Component {
   state = {
     opacity: "0",
     formDisplay: "none",
     btnDisplay: "",
+    vidDisplay: "",
     height: "0px",
     banquetIdea: {}
   }
@@ -30,20 +32,27 @@ class Questions extends Component {
     const height = '';
     const opacity = "1";
     const btnDisplay = "none";
-
-    this.setState({height, opacity});
-    this.setState({btnDisplay});
+    const vidDisplay = "none";
+    setTimeout(()=>{
+      this.setState({btnDisplay});
+      this.setState({vidDisplay});
+    }, 1000);
+    setTimeout(()=>{
+      this.setState({height, opacity});
+    }, 3000);
   }
   render() {
     const questDivStyle = {
       opacity: this.state.opacity,
       height: this.state.height,
+      paddingLeft: "10px",
+      paddingRight: "10px",
       paddingTop: "20px",
       paddingBottom: "20px",
       border: "solid black 1px",
       borderRadius: "2.5%",
       backgroundColor: "rgba(255,255,255,.75)",
-      transition: "height 500ms 1000ms, opacity 500ms 500ms"
+      transition: "height 500ms 0ms, opacity 500ms 250ms"
       }
 
     const btnStyle = {
@@ -55,9 +64,7 @@ class Questions extends Component {
     }
     return (
       <div className="container-fluid col-md-6">
-        <button onClick={this.formHeightHandler}
-                className="btn btn-lg btn-success"
-                style={btnStyle}>Expand Form</button>
+        <Message endHandler={this.formHeightHandler} state={this.state}/>
         <form style={questDivStyle} className="">
           <h2>Agent Event Questionaire</h2>
           <div class="form-group row justify-content-center">
@@ -144,4 +151,8 @@ class Questions extends Component {
   }
 }
 
+
+//<button onClick={this.formHeightHandler}
+        //className="btn btn-lg btn-success"
+        //style={btnStyle}>Expand Form</button>
 export default Questions;

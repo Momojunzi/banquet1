@@ -38,8 +38,16 @@ class App extends Component {
   }
 
   render() {
+    const imageUrl = process.env.PUBLIC_URL;
+    const preloadDisplay = {
+      display: "none"
+    }
     return (
       <div className="App">
+        <img src={imageUrl + "/images/party1.jpeg"} style={preloadDisplay}/>
+        <img src={imageUrl + "/images/party2.jpeg"} style={preloadDisplay}/>
+        <img src={imageUrl + "/images/party3.jpeg"} style={preloadDisplay}/>
+        <img src={imageUrl + "/images/party4.jpeg"} style={preloadDisplay}/>
         <HeaderComp bgImage={this.state.bgImage}/>
 
       </div>

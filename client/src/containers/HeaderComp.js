@@ -13,12 +13,13 @@ class HeaderComp extends Component {
       backgroundImage: "url("+bgurl+")",
       backgroundPosition: "center",
       backgroundRepeat: "no-repeat",
-      backgroundSize: "initial",
-      transition: "background-image 500ms ease-in-out",
+      backgroundSize: "cover",
+      transition: "background-image 3000ms ease-in-out",
       minHeight: "100vh"
     }
     return(
       <div className="container-fluid" style={headerStyle}>
+
         <Questions />
 
       </div>
