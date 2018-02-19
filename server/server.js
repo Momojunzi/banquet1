@@ -13,10 +13,10 @@ const PORT = process.env.PORT || 3001;
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({exended: false}));
 app.use(cookieParser());
-app.use(express.static("./client/public/"));
+//app.use(express.static("./client/public/"));
 //path.join(__dirname, 'public')
 if(process.env.NODE_ENV === "production") {
-  app.use(express.static("./client/build"));
+  app.use(express.static("client/build"));
 }
 
 mongoose.Promise = global.Promise;
@@ -31,7 +31,7 @@ mongoose.connect(
 app.use("/api", apiRoutes);
 
 app.get("*", function(req, res) {
- res.sendfile(path.join(__dirname, "./client/build/index.html"));
+ res.sendfile(path.join(__dirname, "../client/build/index.html"));
 });
 
 app.listen(PORT, function(){
