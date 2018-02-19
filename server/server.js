@@ -34,7 +34,7 @@ mongoose.connect(
 app.use("/api", apiRoutes);
 
 app.get("*", function(req, res) {
- res.sendfile(path.join(__dirname, "./client/public/index.html"));
+ res.sendfile(path.join(__dirname, "./client/build/index.html"));
 });
 
 app.listen(PORT, function(){
