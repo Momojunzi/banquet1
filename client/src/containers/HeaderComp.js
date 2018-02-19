@@ -16,7 +16,7 @@ class HeaderComp extends Component {
       backgroundPosition: "center",
       backgroundRepeat: "no-repeat",
       backgroundSize: "cover",
-      transition: "background-image 3000ms ease-in-out",
+      transition: "background-image 3000ms",
       minHeight: "100vh"
     }
     return(
