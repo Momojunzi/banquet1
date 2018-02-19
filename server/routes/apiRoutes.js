@@ -5,6 +5,9 @@ const ideaController = require("../controllers/ideaController.js")
 router.route("/createIdea")
   .post(ideaController.createIdea);
 
+router.route("/getIdeas")
+  .get(ideaController.getIdeas);
+
 router.route("/test")
   .get((req,res)=>{res.json("api test")});
 

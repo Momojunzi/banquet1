@@ -1,5 +1,7 @@
 import React, {Component} from "react";
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import Questions from "./questions.js";
+import Results from "./Results.js";
 
 class HeaderComp extends Component {
 
@@ -19,8 +21,15 @@ class HeaderComp extends Component {
     }
     return(
       <div className="container-fluid" style={headerStyle}>
+        <Router>
+          <div>
+            <Switch>
+              <Route exact path="/" component={Questions}/>
+              <Route exact path="/results" component={Results}/>
+            </Switch>
+          </div>
+        </Router>
 
-        <Questions />
 
       </div>
     )
